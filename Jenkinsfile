@@ -9,6 +9,7 @@ node {
     checkout scm
 
     stage 'Build project'
+    sh("npm install yarn")
     sh("yarn install")
     sh("yarn build")
 
