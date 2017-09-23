@@ -9,6 +9,8 @@
 # production
 build/
 
+docker/build
+
 .idea/
 
 # misc
