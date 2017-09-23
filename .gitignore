@@ -9,7 +9,7 @@
 # production
 build/
 
-docker/build
+docker/build/
 
 .idea/
 

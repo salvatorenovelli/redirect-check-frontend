@@ -18,6 +18,7 @@ echo "Going to $1 ${IMAGE_TAG}"
 
 case $1 in
     "build" )
+        yarn install
         yarn build
         mv build docker
         echo "Building ${IMAGE_TAG}"
