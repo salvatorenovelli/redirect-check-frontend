@@ -24,6 +24,10 @@ case $1 in
         echo "Building ${IMAGE_TAG}"
         docker build docker -t ${IMAGE_TAG}
     ;;
+    "clean" )
+        rm -rf build
+        rm -rf docker/build
+    ;;
     "run" )
         docker run --name ${ARTIFACT_ID} -it --rm -p 3001:3001 ${IMAGE_TAG}
     ;;
