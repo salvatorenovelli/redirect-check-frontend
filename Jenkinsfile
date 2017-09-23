@@ -23,5 +23,4 @@ node {
     sh("cat k8s/production.yaml")
 //    sh("kubectl --namespace=default apply -f k8s/production.yaml")
 
-    }
 }
