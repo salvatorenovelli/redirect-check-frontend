@@ -12,6 +12,7 @@ build/
 docker/build/
 
 .idea/
+frontend.iml
 
 # misc
 .DS_Store
