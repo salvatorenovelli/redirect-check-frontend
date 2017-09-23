@@ -14,12 +14,14 @@ if [ -z "$1" ]
     exit
 fi
 
+echo "Going to $1 ${IMAGE_TAG}"
 
 case $1 in
     "build" )
         yarn build
+        mv build docker
         echo "Building ${IMAGE_TAG}"
-        docker build -t ${IMAGE_TAG} .
+        docker build docker -t ${IMAGE_TAG}
     ;;
     "run" )
         docker run --name ${ARTIFACT_ID} -it --rm -p 3001:3001 ${IMAGE_TAG}
