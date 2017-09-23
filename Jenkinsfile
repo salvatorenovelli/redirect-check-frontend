@@ -9,6 +9,7 @@ node {
     checkout scm
 
     stage 'Build project'
+    agent { docker 'node:alpine' }
     sh("npm install yarn")
     sh("yarn install")
     sh("yarn build")
