@@ -1,6 +1,7 @@
+
 node {
     def project = 'redirect-check-180020'
-    def appName = 'redirect-check-backend'
+    def appName = 'redirect-check-frontend'
 
     def svcName = "${appName}-service"
 
@@ -10,11 +11,11 @@ node {
 
     stage 'Build project'
 
-    sh("npm install -g yarn")
     sh("yarn install")
     sh("yarn build")
 
     stage 'Build image'
+    sh("mv build docker")
     sh("docker build docker -t ${imageTag}")
 
     stage 'Push image to registry'
@@ -23,6 +24,6 @@ node {
     stage "Deploy Application"
     sh("sed -i.bak 's#<IMAGE_TAG_DO_NOT_EDIT>#${imageTag}#' k8s/production.yaml")
     sh("cat k8s/production.yaml")
-//    sh("kubectl --namespace=default apply -f k8s/production.yaml")
+//  sh("kubectl --namespace=default apply -f k8s/production.yaml")
 
 }
