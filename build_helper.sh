@@ -20,6 +20,7 @@ case $1 in
     "build" )
         yarn install
         yarn build
+        rm -rf docker/build
         mv build docker
         echo "Building ${IMAGE_TAG}"
         docker build docker -t ${IMAGE_TAG}
