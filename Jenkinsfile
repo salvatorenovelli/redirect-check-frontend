@@ -15,6 +15,7 @@ node {
     sh("yarn build")
 
     stage 'Build image'
+    sh("rm -rf docker/build")
     sh("mv build docker")
     sh("docker build docker -t ${imageTag}")
 
