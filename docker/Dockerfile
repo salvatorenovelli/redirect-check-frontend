@@ -6,8 +6,8 @@ FROM node:8.5.0-alpine
 ENV NPM_CONFIG_LOGLEVEL warn
 
 # Install `serve` to run the application.
-RUN yarn global add serve
-RUN serve version
+RUN yarn global add serve@6.0.6
+RUN serve --version
 
 # Copy all local files into the image.
 COPY build build
