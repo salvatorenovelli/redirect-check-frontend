@@ -7,7 +7,7 @@ ENV NPM_CONFIG_LOGLEVEL warn
 
 # Install `serve` to run the application.
 RUN yarn global add serve
-RUN server version
+RUN serve version
 
 # Copy all local files into the image.
 COPY build build
