@@ -1,0 +1,20 @@
+#Configuration file for Google Cloud Builds
+
+steps:
+  - name: 'gcr.io/cloud-builders/yarn'
+    args: ['install']
+  - name: 'gcr.io/cloud-builders/yarn'
+    args: ['build']
+  - name: 'ubuntu'
+    args: ['bash', '-c', 'rm -rf docker/build && mv build docker']
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', 'docker',
+           '-t', 'eu.gcr.io/$PROJECT_ID/redirect-check-frontend:$TAG_NAME',
+           '-t', 'eu.gcr.io/$PROJECT_ID/redirect-check-frontend:$SHORT_SHA',
+           '-t', 'eu.gcr.io/$PROJECT_ID/redirect-check-frontend:latest']
+
+images:
+  - 'eu.gcr.io/$PROJECT_ID/redirect-check-frontend:$TAG_NAME'
+  - 'eu.gcr.io/$PROJECT_ID/redirect-check-frontend:$SHORT_SHA'
+  - 'eu.gcr.io/$PROJECT_ID/redirect-check-frontend:latest'
