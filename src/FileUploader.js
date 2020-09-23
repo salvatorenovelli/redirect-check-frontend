@@ -38,7 +38,7 @@ class FileUploader extends Component {
                 </div>
                 <CookieConsent>
                     This website uses cookies to provide the best user experience.
-                    <NavLink href="https://myseotoolbox.com/privacy-policy.pdf">Learn more</NavLink>
+                    <NavLink href="https://myseotoolbox.com/privacy-policy/">Learn more</NavLink>
                 </CookieConsent>
             </section>
         );

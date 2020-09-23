@@ -7,7 +7,7 @@ import {Container, Row} from "reactstrap";
 export default () =>
     <div className="App">
         <div className="App-header">
-            <h2>Welcome to My SEO Toolbox</h2>
+            <h2>Redirect check</h2>
             <div className={"logo"}>
                 <img width={"120px"} alt="logo" src={"/img/logo_nobg.png"}/>
             </div>
